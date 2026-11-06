@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Notepad Pro</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            📝 <span>Notepad Pro</span>
+        </div>
+
+        <button id="newNoteBtn" class="new-btn">
+            + New Note
+        </button>
+
+        <div class="search-box">
+            🔍
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search notes..."
+            >
+        </div>
+
+        <!-- FOLDERS -->
+        <div class="section-title">
+            <span>FOLDERS</span>
+            <button id="addFolderBtn">+</button>
+        </div>
+
+        <div id="foldersList"></div>
+
+        <!-- NOTES -->
+        <div class="section-title">
+            <span>NOTES</span>
+        </div>
+
+        <div id="notesList"></div>
+
+        <div class="sidebar-bottom">
+
+            <button id="exportBtn">
+                📤 Export
+            </button>
+
+            <button id="importBtn">
+                📥 Import
+            </button>
+
+            <input
+                type="file"
+                id="importFile"
+                accept=".json"
+                hidden
+            >
+
+        </div>
+
+    </aside>
+
+
+    <!-- EDITOR -->
+    <main class="editor">
+
+        <header class="toolbar">
+
+            <button id="menuBtn">
+                ☰
+            </button>
+
+            <input
+                id="titleInput"
+                placeholder="Note title"
+            >
+
+            <button id="pinBtn" title="Pin note">
+                📌
+            </button>
+
+            <button id="colorBtn" title="Change color">
+                🎨
+            </button>
+
+            <button id="deleteBtn" title="Delete note">
+                🗑️
+            </button>
+
+            <button id="themeBtn">
+                🌙
+            </button>
+
+        </header>
+
+
+        <!-- FORMAT BAR -->
+        <div class="format-bar">
+
+            <button data-command="bold">
+                <b>B</b>
+            </button>
+
+            <button data-command="italic">
+                <i>I</i>
+            </button>
+
+            <button data-command="underline">
+                <u>U</u>
+            </button>
+
+            <button data-command="insertUnorderedList">
+                ☷ List
+            </button>
+
+            <button data-command="formatBlock"
+                    data-value="h2">
+                H
+            </button>
+
+            <button data-command="formatBlock"
+                    data-value="p">
+                ¶
+            </button>
+
+        </div>
+
+
+        <!-- EDITOR AREA -->
+        <div
+            id="contentInput"
+            contenteditable="true"
+            spellcheck="true"
+            data-placeholder="Start writing your note..."
+        ></div>
+
+
+        <footer class="status">
+
+            <span id="wordCount">
+                0 words
+            </span>
+
+            <span id="saveStatus">
+                Saved
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- COLOR MENU -->
+<div id="colorMenu" class="color-menu">
+
+    <button data-color="#ffffff"></button>
+    <button data-color="#fff3cd"></button>
+    <button data-color="#d1fae5"></button>
+    <button data-color="#dbeafe"></button>
+    <button data-color="#fce7f3"></button>
+    <button data-color="#ede9fe"></button>
+    <button data-color="#cffafe"></button>
+
+</div>
+
+
+<!-- FOLDER MODAL -->
+<div id="folderModal" class="modal">
+
+    <div class="modal-box">
+
+        <h2>New Folder</h2>
+
+        <input
+            id="folderNameInput"
+            placeholder="Folder name"
+        >
+
+        <div class="modal-buttons">
+
+            <button id="cancelFolder">
+                Cancel
+            </button>
+
+            <button id="saveFolder">
+                Create
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
